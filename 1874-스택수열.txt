@@ -1,0 +1,18 @@
+testCase = int(input())
+
+count = 1
+stack = list()
+result_list = list()
+for idx in range(testCase):
+    data = int(input())
+    while count <= data:
+        stack.append(count)
+        result_list.append('+')
+        count += 1
+    if data == stack[-1]:
+        result_list.append('-')
+        stack.pop()
+    else:
+        print('NO')
+        exit()
+print('\n'.join(result_list))
